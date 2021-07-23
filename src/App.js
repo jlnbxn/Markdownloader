@@ -91,7 +91,7 @@ function App() {
 
       if (response.status === 409) {
         const response = await fetch(
-          "http://localhost:8888/.netlify/functions/getContent",
+          "/.netlify/functions/getContent",
           {
             method: "POST",
             body: value,
@@ -136,14 +136,14 @@ function App() {
         try {
           console.log(error);
           const proxiedImageUrl = await fetch(
-            "http://localhost:8888/.netlify/functions/getProxiedImageUrl",
+            "/.netlify/functions/getProxiedImageUrl",
             {
               method: "POST",
               body: img.src,
             }
           ).then((res) => res.json());
           img.setAttribute("data-orgsrc", proxiedImageUrl);
-          const blob = await fetch(`/cors-proxy/${proxiedImageUrl}`).then(
+          const blob = await fetch(`/cors-proxy/${proxiedImageUrl.replace('https://', '')}`).then(
             (res) => res.blob()
           );
           const objectURL = URL.createObjectURL(blob);
@@ -192,7 +192,7 @@ function App() {
     let folder = zip.folder("/assets");
     const images = document.querySelectorAll("img");
     for (let img of images) {
-      const imageUrl = `/cors-proxy/${img.dataset.orgsrc}`;
+      const imageUrl = `/cors-proxy/${img.dataset.orgsrc.replace('https://', '')}`;
       const filename = imageUrl.substr(imageUrl.lastIndexOf("/"));
       const filenameDecoded = decodeURI(filename);
       const blob = await fetch(imageUrl).then((res) => res.blob());
