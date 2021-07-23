@@ -123,7 +123,7 @@ function App() {
     var images = document.querySelectorAll("img");
     for (let img of images) {
       try {
-        const blob = await fetch(`/cors-proxy/${img.src.replace('https://', '').replace('http', '')}`).then((res) =>
+        const blob = await fetch(`/cors-proxy/${img.src.replace('https://', '').replace('http://', '')}`).then((res) =>
           res.blob()
         );
         const objectURL = URL.createObjectURL(blob);
