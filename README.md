@@ -16,11 +16,26 @@ Clicking the "Download" button fetches all the images, creates a markdown file a
 
 By employing a neat trick, the site also acts as a quick fix to circumvent the annoying paywall problem of medium.com sites, similar to what the popular [Outline.com](https://outline.com/) can do.
 
-![Enter URL](./docs/assets/img/enter-url.png "Enter an URL to an article...")
+<figure>
+  <img
+  src="./docs/assets/img/enter-url.png"
+  alt="Enter URL"/>
+  <figcaption>Enter an URL to an article...</figcaption>
+</figure>
 
-![Dynamic Table of Contents](./docs/assets/img/table-of-contents.png "...get back a GitHub flavored Markdown Viewer...")
+<figure>
+  <img
+  src="./docs/assets/img/table-of-contents.png"
+  alt="Dynamic Table of Contents"/>
+  <figcaption>...get back a GitHub flavored Markdown Viewer..</figcaption>
+</figure>
 
-![Download Markdown](./docs/assets/img/download-markdown.png "...and download to the safe vicinity of your device.")
+<figure>
+  <img
+  src="./docs/assets/img/download-markdown.png"
+  alt="Download Markdown"/>
+  <figcaption>...and download to the safe vicinity of your device.</figcaption>
+</figure>
 
 ## How It Works
 
